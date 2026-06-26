@@ -2660,5 +2660,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // --- MOBILE BOTTOM NAVIGATION INTERACTION HANDLERS ---
+  const mobileMascotBtn = document.getElementById('mobile-mascot-trigger');
+  if (mobileMascotBtn) {
+    mobileMascotBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      // Trigger the main navigation bubble to toggle the radial sub-menu
+      const mainBubble = document.getElementById('main-navigation-bubble');
+      if (mainBubble) {
+        mainBubble.click();
+      }
+    });
+  }
+
+  const mobileNotificationBtn = document.getElementById('mobile-nav-notifications');
+  if (mobileNotificationBtn) {
+    mobileNotificationBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      showToast('Opening Notifications... 🔔');
+    });
+  }
 
 });
